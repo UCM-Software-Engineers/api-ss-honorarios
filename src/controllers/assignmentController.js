@@ -2,7 +2,7 @@ import connection from '../db/connection.js';
 
 export const getAssignment = async (req, res) => {
     try {
-        const [rows] = await connection.query('SELECT * FROM bienestar_afp');
+        const [rows] = await connection.query('SELECT * FROM presupuesto_asignacion');
         res.json(rows);
     } catch (error) {
         console.error('Error querying assignment:', error);

@@ -2,7 +2,7 @@ import connection from '../db/connection.js';
 
 export const getItem = async (req, res) => {
     try {
-        const [rows] = await connection.query('SELECT * FROM bdi_city');
+        const [rows] = await connection.query('SELECT * FROM presupuesto_item');
         res.json(rows);
     } catch (error) {
         console.error('Error querying item:', error);
