@@ -1,4 +1,6 @@
 import express from 'express';
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 import connection from './db/connection.js';
 import afpRoutes from './routes/afpRoutes.js';
 import previsionRoutes from './routes/previsionRoutes.js';
@@ -13,12 +15,39 @@ import subtitleRoutes from './routes/subtitleRoutes.js';
 import itemRoutes from './routes/itemRoutes.js';
 import assignmentRoutes from './routes/assignmentRoutes.js';
 import movementRoutes from './routes/movementRoutes.js';
+import workerRoutes from './routes/workerRoutes.js';
+import termsRoutes from './routes/termsRoutes.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+const swaggerDefinition = {
+    openapi: '3.0.0',
+    info: {
+      title: 'API Documentación de Honorarios',
+      version: '1.0.0',
+      description: 'Documentación de la API para el sistema de honorarios',
+    },
+    servers: [
+      {
+        url: 'http://localhost:3000', 
+      },
+      {
+        url: 'https://container-ss-honorarios.aygj9z7we8e4g.us-east-2.cs.amazonlightsail.com',
+      },
+    ],
+  };
+  
+const options = {
+    swaggerDefinition,
+    apis: ['./src/routes/*.js'],
+};
+
+const swaggerSpec = swaggerJSDoc(options);
+
 app.use(express.json());
 
+app.use('/api-documentacion', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/api', afpRoutes);
 app.use('/api', previsionRoutes);
 app.use('/api', mutualityRoutes);
@@ -32,6 +61,8 @@ app.use('/api', subtitleRoutes);
 app.use('/api', itemRoutes);
 app.use('/api', assignmentRoutes);
 app.use('/api', movementRoutes);
+app.use('/api', workerRoutes);
+app.use('/api', termsRoutes);
 
 app.get('/checkbd', async (req, res) => {
     try {
@@ -45,4 +76,8 @@ app.get('/checkbd', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);
+});
+
+app.use('/', (req, res) => {
+    res.json({ message: 'API de Sistema de Honorarios' });
 });
