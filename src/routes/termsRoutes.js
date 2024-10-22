@@ -7,7 +7,7 @@ const router = express.Router();
  * @swagger
  * tags:
  *   - name: Terminos de referencia
- *     description: Operaciones relacionadas con términos de referencia
+ *     description: (Está en desarrollo aún)
  *
  * /api/terms:
  *   get:

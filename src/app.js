@@ -17,6 +17,7 @@ import assignmentRoutes from './routes/assignmentRoutes.js';
 import movementRoutes from './routes/movementRoutes.js';
 import workerRoutes from './routes/workerRoutes.js';
 import termsRoutes from './routes/termsRoutes.js';
+import yearRoutes from './routes/yearRoutes.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -63,6 +64,7 @@ app.use('/api', assignmentRoutes);
 app.use('/api', movementRoutes);
 app.use('/api', workerRoutes);
 app.use('/api', termsRoutes);
+app.use('/api', yearRoutes);
 
 app.get('/checkbd', async (req, res) => {
     try {
