@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import connection from './db/connection.js';
@@ -21,6 +22,7 @@ import yearRoutes from './routes/yearRoutes.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(cors());
 
 const swaggerDefinition = {
     openapi: '3.0.0',
