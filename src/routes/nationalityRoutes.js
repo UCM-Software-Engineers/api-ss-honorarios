@@ -1,5 +1,5 @@
 import express from 'express';
-import { getNationality } from '../controllers/regionController.js';
+import { getNationality } from '../controllers/nationalityController.js';
 
 const router = express.Router();
 
