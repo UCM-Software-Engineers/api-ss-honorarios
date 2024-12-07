@@ -9,7 +9,7 @@ const router = express.Router();
  *   get:
  *     summary: Obtiene la lista de subtitulos de presupuesto
  *     tags: 
- *       - Presupuesto
+ *       - Presupuesto Subtitulo
  *     responses:
  *       200:
  *         description: Lista de subtitulos de presupuesto

@@ -9,7 +9,7 @@ const router = express.Router();
  *   get:
  *     summary: Obtiene la lista de Presupuesto movimiento
  *     tags: 
- *       - Presupuesto
+ *       - Presupuesto movimiento
  *     responses:
  *       200:
  *         description: Lista de Presupuesto movimiento

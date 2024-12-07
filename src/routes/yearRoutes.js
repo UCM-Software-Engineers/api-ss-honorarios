@@ -9,7 +9,7 @@ const router = express.Router();
  *   get:
  *     summary: Obtiene la lista de periodos presupuestarios
  *     tags: 
- *       - Presupuesto
+ *       - Periodos presupuestarios
  *     responses:
  *       200:
  *         description: Lista de periodos presupuestarios

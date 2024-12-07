@@ -1,18 +1,18 @@
 import express from 'express';
-import { getGrade } from '../controllers/gradeController.js';
+import { getNationality } from '../controllers/regionController.js';
 
 const router = express.Router();
 
 /**
  * @swagger
- * /api/grade:
+ * /api/nationality:
  *   get:
- *     summary: Obtiene la lista de Grado académico
+ *     summary: Obtiene la lista de Nacionalidades
  *     tags: 
- *       - Grado académico
+ *       - Nacionalidades
  *     responses:
  *       200:
- *         description: Lista de Grado académico
+ *         description: Lista de Nacionalidades
  *         content:
  *           application/json:
  *             schema:
@@ -20,13 +20,13 @@ const router = express.Router();
  *               items:
  *                 type: object
  *                 properties:
- *                   id_nivel_educacional:
+ *                   id_pais:
  *                     type: integer
- *                   nivel_educacional:
+ *                   nombre:
  *                     type: string
  */
 
 
-router.get('/grade', getGrade);
+router.get('/nationality', getNationality);
 
 export default router;
