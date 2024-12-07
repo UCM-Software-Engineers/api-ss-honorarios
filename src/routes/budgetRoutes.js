@@ -159,7 +159,7 @@ const router = express.Router();
 
 
 
-router.get('/budget', getBudget);
+router.get('/budgets', getBudget);
 router.post('/create-budget', createBudget);
 router.delete('/delete-budget', deleteBudget);
 router.put('/update-budget', updateBudget);
