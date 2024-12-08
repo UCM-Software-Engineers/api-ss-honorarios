@@ -28,6 +28,7 @@ export const createTerm = async (req, res) => {
       'id_comuna',
       'calle_direccion',
       'numero_direccion',
+      'numero_direccion_2',
       'antecedentes_academicos',
       'id_tipo_funcion',
       'id_area',
@@ -38,7 +39,8 @@ export const createTerm = async (req, res) => {
       'id_asignacion',
       'fecha_inicio_contrato',
       'fecha_termino_contrato',
-      'beneficios' // Array de beneficios
+      'beneficios', // Array de beneficios
+      'rut_prestador'
   ];
 
   const missingFields = requiredFields.filter(
@@ -72,6 +74,7 @@ export const createTerm = async (req, res) => {
 
       const terminoReferenciaData = {
           id_funcionario: idFuncionario,
+          rut_prestador: termData.rut_prestador,
           agente_publico: termData.agente_publico ? 1 : 0,
           contrato_otra_institucion: termData.contrato_otra_institucion ? 1 : 0,
           id_afp: termData.id_afp,
@@ -81,7 +84,7 @@ export const createTerm = async (req, res) => {
           id_comuna: termData.id_comuna,
           calle_direccion: termData.calle_direccion,
           numero_direccion: termData.numero_direccion,
-          numero_departamento_direccion: termData.numero_departamento_direccion || null,
+          numero_departamento_direccion: termData.numero_direccion_2,
           objetivo_contrato: termData.objetivo_contrato,
           monto_consultoria: termData.monto_consultoria,
           id_asignacion: termData.id_asignacion,

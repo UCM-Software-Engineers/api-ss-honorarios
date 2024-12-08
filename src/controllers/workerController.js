@@ -38,6 +38,7 @@ export const getWorker = async (req, res) => {
       const nombreCompleto = `${funcionario.nombre_usuario} ${funcionario.apellido_paterno} ${funcionario.apellido_materno}`;
 
       const response = {
+          id: funcionario.id_funcionario,
           rut: funcionario.rut_funcionario,
           nombreCompleto,
           sexo: funcionario.sexo,
