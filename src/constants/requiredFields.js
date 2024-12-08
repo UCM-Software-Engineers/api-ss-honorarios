@@ -1,0 +1,19 @@
+export const requiredFields = [
+    'id_funcionario',
+    'id_plan_salud',
+    'id_mutual',
+    'id_afp',
+    'id_comuna',
+    'id_region',
+    'id_asignacion',
+    'rut_prestador',
+    'agente_publico',
+    'monto_consultoria',
+    'contrato_otra_institucion',
+    'objetivo_contrato',
+    'calle_direccion',
+    'numero_direccion',
+    'numero_departamento_direccion',
+    'fecha_termino_contrato',
+    'fecha_inicio_contrato'
+  ];
