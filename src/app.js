@@ -21,6 +21,7 @@ import termsRoutes from './routes/termsRoutes.js';
 import yearRoutes from './routes/yearRoutes.js';
 import budgetRoutes from './routes/budgetRoutes.js';
 import nationalityRoutes from './routes/nationalityRoutes.js';
+import conceptRoutes from './routes/conceptRoutes.js';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -30,7 +31,7 @@ const swaggerDefinition = {
     openapi: '3.0.0',
     info: {
       title: 'API Documentación de Honorarios',
-      version: '1.0.0',
+      version: '1.2.4',
       description: 'Documentación de la API para el sistema de honorarios',
     },
     servers: [
@@ -71,6 +72,7 @@ app.use('/api', termsRoutes);
 app.use('/api', yearRoutes);
 app.use('/api', nationalityRoutes);
 app.use('/api', budgetRoutes);
+app.use('/api', conceptRoutes);
 
 app.get('/checkbd', async (req, res) => {
     try {
